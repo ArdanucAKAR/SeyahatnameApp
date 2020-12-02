@@ -9,26 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Upload View Controller-->
         <scene sceneID="GDA-x9-DVe">
             <objects>
-                <viewController id="Oop-PR-IQT" sceneMemberID="viewController">
+                <viewController id="Oop-PR-IQT" customClass="UploadViewController" customModule="Seyahatname" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VIs-dU-xf2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nrt-CK-uMF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="vMn-aZ-qFn"/>
+                    <tabBarItem key="tabBarItem" title="" image="plus-sign" id="vMn-aZ-qFn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zQ-H8-cOv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1231" y="250"/>
+            <point key="canvasLocation" x="-1232" y="307"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="xJC-Oy-Hb0">
             <objects>
-                <viewController id="czV-7l-AvQ" sceneMemberID="viewController">
+                <viewController id="czV-7l-AvQ" customClass="HomeViewController" customModule="Seyahatname" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YWA-B8-I5L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,11 +54,57 @@
                     <connections>
                         <segue destination="czV-7l-AvQ" kind="relationship" relationship="viewControllers" id="Wdu-9X-jN4"/>
                         <segue destination="Oop-PR-IQT" kind="relationship" relationship="viewControllers" id="yc9-bm-qaZ"/>
+                        <segue destination="rnE-c5-LyW" kind="relationship" relationship="viewControllers" id="sL7-26-Y6G"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDV-a2-n0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2123" y="-53"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="PQB-sJ-dFl">
+            <objects>
+                <viewController id="rnE-c5-LyW" customClass="SettingsViewController" customModule="Seyahatname" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zDh-ft-YUs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib9-Kk-LZ3" customClass="CustomButton" customModule="Seyahatname" customModuleProvider="target">
+                                <rect key="frame" x="20" y="759" width="374" height="34"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="fWd-lV-Rdh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Çıkış">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnLogoutClick:" destination="rnE-c5-LyW" eventType="touchUpInside" id="KLX-PA-iLp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jTe-Du-vaz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jTe-Du-vaz" firstAttribute="bottom" secondItem="ib9-Kk-LZ3" secondAttribute="bottom" constant="20" id="4bT-cc-lGv"/>
+                            <constraint firstItem="jTe-Du-vaz" firstAttribute="trailing" secondItem="ib9-Kk-LZ3" secondAttribute="trailing" constant="20" id="IXw-jh-IW3"/>
+                            <constraint firstItem="ib9-Kk-LZ3" firstAttribute="leading" secondItem="jTe-Du-vaz" secondAttribute="leading" constant="20" id="Niq-6s-K6O"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="gear" id="ykb-sp-9cM"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="lk4-QK-EKC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAP-bq-prE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1233.3333333333335" y="979.6875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -173,6 +219,7 @@
                             <constraint firstItem="NSs-mr-mgO" firstAttribute="centerX" secondItem="oxm-93-kv7" secondAttribute="centerX" id="vyg-qc-bjv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="heB-np-ap6"/>
                     <connections>
                         <outlet property="btnLogin" destination="NSs-mr-mgO" id="58h-Ab-C2x"/>
                         <outlet property="btnRegister" destination="NfR-vq-FCQ" id="ZFP-bG-NX0"/>
@@ -189,10 +236,15 @@
         <designable name="NSs-mr-mgO">
             <size key="intrinsicContentSize" width="77" height="36"/>
         </designable>
+        <designable name="ib9-Kk-LZ3">
+            <size key="intrinsicContentSize" width="43" height="36"/>
+        </designable>
     </designables>
     <resources>
+        <image name="gear" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
         <image name="logoSeyahatname" width="1340" height="1414"/>
+        <image name="plus-sign" width="29" height="30"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
