@@ -10,7 +10,7 @@
 		148D77B0D5D54B5ECB5C8079 /* Pods_Seyahatname.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6731FC78531AB22E8CE7DC1A /* Pods_Seyahatname.framework */; };
 		18308F2A256F87A6008C6FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F29256F87A6008C6FA7 /* AppDelegate.swift */; };
 		18308F2C256F87A6008C6FA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */; };
-		18308F2E256F87A6008C6FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F2D256F87A6008C6FA7 /* ViewController.swift */; };
+		18308F2E256F87A6008C6FA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F2D256F87A6008C6FA7 /* LoginViewController.swift */; };
 		18308F31256F87A6008C6FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18308F2F256F87A6008C6FA7 /* Main.storyboard */; };
 		18308F33256F87A6008C6FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18308F32256F87A6008C6FA7 /* Assets.xcassets */; };
 		18308F36256F87A6008C6FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18308F34256F87A6008C6FA7 /* LaunchScreen.storyboard */; };
@@ -20,13 +20,14 @@
 		183A4CF0257808320087668F /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A4CEF257808320087668F /* UploadViewController.swift */; };
 		183A4CF32578084A0087668F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A4CF22578084A0087668F /* SettingsViewController.swift */; };
 		1855983D256F88A600C9E793 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1855983C256F88A600C9E793 /* GoogleService-Info.plist */; };
+		1867B65025781D0D00F91381 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867B64F25781D0D00F91381 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18308F26256F87A6008C6FA7 /* Seyahatname.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seyahatname.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18308F29256F87A6008C6FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18308F2D256F87A6008C6FA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18308F2D256F87A6008C6FA7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18308F30256F87A6008C6FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18308F32256F87A6008C6FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18308F35256F87A6008C6FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +38,7 @@
 		183A4CEF257808320087668F /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		183A4CF22578084A0087668F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1855983C256F88A600C9E793 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1867B64F25781D0D00F91381 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6731FC78531AB22E8CE7DC1A /* Pods_Seyahatname.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seyahatname.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74019897E8182E529FBC1515 /* Pods-Seyahatname.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seyahatname.debug.xcconfig"; path = "Target Support Files/Pods-Seyahatname/Pods-Seyahatname.debug.xcconfig"; sourceTree = "<group>"; };
 		D18CC328C86B778171F0C357 /* Pods-Seyahatname.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seyahatname.release.xcconfig"; path = "Target Support Files/Pods-Seyahatname/Pods-Seyahatname.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,10 +102,11 @@
 		183A4CEA257807AF0087668F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				18308F2D256F87A6008C6FA7 /* ViewController.swift */,
+				18308F2D256F87A6008C6FA7 /* LoginViewController.swift */,
 				183A4CEC257808180087668F /* HomeViewController.swift */,
 				183A4CEF257808320087668F /* UploadViewController.swift */,
 				183A4CF22578084A0087668F /* SettingsViewController.swift */,
+				1867B64F25781D0D00F91381 /* RegisterViewController.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -240,9 +243,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1867B65025781D0D00F91381 /* RegisterViewController.swift in Sources */,
 				183A4CE7257805AF0087668F /* CustomTextField.swift in Sources */,
 				183A4CF0257808320087668F /* UploadViewController.swift in Sources */,
-				18308F2E256F87A6008C6FA7 /* ViewController.swift in Sources */,
+				18308F2E256F87A6008C6FA7 /* LoginViewController.swift in Sources */,
 				18308F2A256F87A6008C6FA7 /* AppDelegate.swift in Sources */,
 				18308F2C256F87A6008C6FA7 /* SceneDelegate.swift in Sources */,
 				183A4CE8257805AF0087668F /* CustomButton.swift in Sources */,

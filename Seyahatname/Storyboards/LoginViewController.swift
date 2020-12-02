@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     @IBOutlet var btnLogin: UIButton!
     @IBOutlet var btnRegister: UIButton!
     @IBOutlet var txtUsername: UITextField!
@@ -18,5 +18,9 @@ class ViewController: UIViewController {
 
     @IBAction func btnLoginClick(_ sender: Any) {
         performSegue(withIdentifier: "toHomeVC", sender: nil)
+    }
+
+    @IBAction func btnRegisterClick(_ sender: Any) {
+        performSegue(withIdentifier: "toRegisterVC", sender: nil)
     }
 }
