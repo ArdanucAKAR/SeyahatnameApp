@@ -1,24 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="GDA-x9-DVe">
+            <objects>
+                <viewController id="Oop-PR-IQT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VIs-dU-xf2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nrt-CK-uMF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="vMn-aZ-qFn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9zQ-H8-cOv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1231" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xJC-Oy-Hb0">
+            <objects>
+                <viewController id="czV-7l-AvQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWA-B8-I5L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DdM-28-izL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="Ekt-dT-UC3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ybA-xe-DzS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1231" y="-357"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aa3-0U-LWd">
+            <objects>
+                <tabBarController id="Wgz-XL-TVc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="H8n-yf-6df"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NzF-Gb-yYg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="czV-7l-AvQ" kind="relationship" relationship="viewControllers" id="Wdu-9X-jN4"/>
+                        <segue destination="Oop-PR-IQT" kind="relationship" relationship="viewControllers" id="yc9-bm-qaZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDV-a2-n0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2123" y="-53"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Seyahatname" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSeyahatname" translatesAutoresizingMaskIntoConstraints="NO" id="ebw-sc-5fk">
+                                <rect key="frame" x="82" y="127" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="c0Z-Dr-sR7"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Posta Adresi" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFV-rk-vua">
+                                <rect key="frame" x="82" y="430" width="250" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Ardanuc"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPL-vA-rQT">
+                                <rect key="frame" x="82" y="480" width="250" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-mr-mgO" customClass="CustomButton" customModule="Seyahatname" customModuleProvider="target">
+                                <rect key="frame" x="82" y="530" width="250" height="34"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="LgD-QS-SzU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Giriş Yap">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JSi-Q3-KMS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfR-vq-FCQ">
+                                <rect key="frame" x="20" y="832" width="374" height="30"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Hesabın Yoksa">
+                                            <attributes>
+                                                <color key="NSColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Kaydol">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxm-93-kv7">
+                                <rect key="frame" x="0.0" y="826" width="414" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9Kt-cx-YJS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ebw-sc-5fk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="0MJ-jA-3qD"/>
+                            <constraint firstItem="NSs-mr-mgO" firstAttribute="top" secondItem="OPL-vA-rQT" secondAttribute="bottom" constant="16" id="3id-Xl-v0A"/>
+                            <constraint firstItem="NfR-vq-FCQ" firstAttribute="top" secondItem="oxm-93-kv7" secondAttribute="bottom" constant="5" id="D23-Jq-5KR"/>
+                            <constraint firstItem="aFV-rk-vua" firstAttribute="top" secondItem="ebw-sc-5fk" secondAttribute="bottom" constant="53" id="DNz-Iu-FKc"/>
+                            <constraint firstItem="OPL-vA-rQT" firstAttribute="top" secondItem="aFV-rk-vua" secondAttribute="bottom" constant="16" id="DSI-Dv-oWz"/>
+                            <constraint firstItem="aFV-rk-vua" firstAttribute="trailing" secondItem="OPL-vA-rQT" secondAttribute="trailing" id="FEh-l6-lzh"/>
+                            <constraint firstItem="ebw-sc-5fk" firstAttribute="trailing" secondItem="aFV-rk-vua" secondAttribute="trailing" id="FaH-4F-1Yt"/>
+                            <constraint firstItem="oxm-93-kv7" firstAttribute="centerX" secondItem="NfR-vq-FCQ" secondAttribute="centerX" id="L3p-SB-36m"/>
+                            <constraint firstItem="aFV-rk-vua" firstAttribute="leading" secondItem="OPL-vA-rQT" secondAttribute="leading" id="PAK-Gd-I8F"/>
+                            <constraint firstItem="NfR-vq-FCQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Suf-UE-Mkd"/>
+                            <constraint firstItem="OPL-vA-rQT" firstAttribute="leading" secondItem="NSs-mr-mgO" secondAttribute="leading" id="UOs-EZ-R1z"/>
+                            <constraint firstItem="oxm-93-kv7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="VgF-pd-gn4"/>
+                            <constraint firstItem="OPL-vA-rQT" firstAttribute="trailing" secondItem="NSs-mr-mgO" secondAttribute="trailing" id="YnT-pD-aB7"/>
+                            <constraint firstItem="NfR-vq-FCQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dtE-oO-2bc"/>
+                            <constraint firstItem="NfR-vq-FCQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hzV-wd-2y8"/>
+                            <constraint firstItem="ebw-sc-5fk" firstAttribute="leading" secondItem="aFV-rk-vua" secondAttribute="leading" id="kBe-QN-rZA"/>
+                            <constraint firstItem="ebw-sc-5fk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="kd2-g5-Re6"/>
+                            <constraint firstItem="oxm-93-kv7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="826" id="lDt-JJ-GNm"/>
+                            <constraint firstItem="NSs-mr-mgO" firstAttribute="centerX" secondItem="oxm-93-kv7" secondAttribute="centerX" id="vyg-qc-bjv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="NSs-mr-mgO" id="58h-Ab-C2x"/>
+                        <outlet property="btnRegister" destination="NfR-vq-FCQ" id="ZFP-bG-NX0"/>
+                        <outlet property="txtUsername" destination="aFV-rk-vua" id="Y66-oI-hDD"/>
+                        <segue destination="Wgz-XL-TVc" kind="presentation" identifier="toHomeVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="5Jc-kh-4wR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-3139.130434782609" y="-54.241071428571423"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="NSs-mr-mgO">
+            <size key="intrinsicContentSize" width="77" height="36"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="home" width="30" height="30"/>
+        <image name="logoSeyahatname" width="1340" height="1414"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

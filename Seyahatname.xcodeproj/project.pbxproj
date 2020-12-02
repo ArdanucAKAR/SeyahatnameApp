@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		18308F31256F87A6008C6FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18308F2F256F87A6008C6FA7 /* Main.storyboard */; };
 		18308F33256F87A6008C6FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18308F32256F87A6008C6FA7 /* Assets.xcassets */; };
 		18308F36256F87A6008C6FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18308F34256F87A6008C6FA7 /* LaunchScreen.storyboard */; };
+		183A4CDD2573DD2E0087668F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A4CDC2573DD2E0087668F /* CustomButton.swift */; };
+		183A4CE02573EB7B0087668F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A4CDF2573EB7B0087668F /* CustomTextField.swift */; };
 		1855983D256F88A600C9E793 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1855983C256F88A600C9E793 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		18308F32256F87A6008C6FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18308F35256F87A6008C6FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18308F37256F87A6008C6FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		183A4CDC2573DD2E0087668F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		183A4CDF2573EB7B0087668F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		1855983C256F88A600C9E793 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6731FC78531AB22E8CE7DC1A /* Pods_Seyahatname.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seyahatname.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74019897E8182E529FBC1515 /* Pods-Seyahatname.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seyahatname.debug.xcconfig"; path = "Target Support Files/Pods-Seyahatname/Pods-Seyahatname.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 		18308F28256F87A6008C6FA7 /* Seyahatname */ = {
 			isa = PBXGroup;
 			children = (
+				183A4CDA2573D1B40087668F /* UI */,
 				18308F29256F87A6008C6FA7 /* AppDelegate.swift */,
 				18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */,
 				18308F2D256F87A6008C6FA7 /* ViewController.swift */,
@@ -75,6 +80,15 @@
 				1855983C256F88A600C9E793 /* GoogleService-Info.plist */,
 			);
 			path = Seyahatname;
+			sourceTree = "<group>";
+		};
+		183A4CDA2573D1B40087668F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				183A4CDC2573DD2E0087668F /* CustomButton.swift */,
+				183A4CDF2573EB7B0087668F /* CustomTextField.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		B2F3177CFE1F7031ED2CC099 /* Frameworks */ = {
@@ -91,7 +105,6 @@
 				74019897E8182E529FBC1515 /* Pods-Seyahatname.debug.xcconfig */,
 				D18CC328C86B778171F0C357 /* Pods-Seyahatname.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,9 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183A4CDD2573DD2E0087668F /* CustomButton.swift in Sources */,
 				18308F2E256F87A6008C6FA7 /* ViewController.swift in Sources */,
 				18308F2A256F87A6008C6FA7 /* AppDelegate.swift in Sources */,
 				18308F2C256F87A6008C6FA7 /* SceneDelegate.swift in Sources */,
+				183A4CE02573EB7B0087668F /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

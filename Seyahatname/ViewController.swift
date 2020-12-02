@@ -8,12 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var btnLogin: UIButton!
+    @IBOutlet var btnRegister: UIButton!
+    @IBOutlet var txtUsername: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func btnLoginClick(_ sender: Any) {
+        performSegue(withIdentifier: "toHomeVC", sender: nil)
+    }
 }
-
