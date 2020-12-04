@@ -5,6 +5,7 @@
 //  Created by Ardanuc AKAR on 2.12.2020.
 //
 
+import Firebase
 import UIKit
 
 class SettingsViewController: UIViewController {
@@ -15,6 +16,12 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func btnLogoutClick(_ sender: Any) {
-        performSegue(withIdentifier: "toLoginVC", sender: nil)
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "toLoginVC", sender: nil)
+        } catch {
+            present(Notify.Alert(title: "Hata", message: "Bilinmeyen Hata"), animated: true, completion: nil)
+            
+        }
     }
 }

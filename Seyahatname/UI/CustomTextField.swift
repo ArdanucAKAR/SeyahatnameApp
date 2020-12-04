@@ -10,10 +10,16 @@ import UIKit
 
 @IBDesignable
 class CustomTextField: UITextField {
-    @IBInspectable var placeholderColor: UIColor = UIColor.black {
+    @IBInspectable var height: CGFloat = 0 {
         didSet {
-            self.attributedPlaceholder = NSAttributedString(string: "",
-                                                            attributes: [NSAttributedString.Key.foregroundColor: self.placeholderColor])
+            frame.size.height = height
         }
     }
+    
+//    @IBInspectable var placeholderColor: UIColor = UIColor.black {
+//        didSet {
+//            self.attributedPlaceholder = NSAttributedString(string: "",
+//                                                            attributes: [NSAttributedString.Key.foregroundColor: self.placeholderColor])
+//        }
+//    }
 }
