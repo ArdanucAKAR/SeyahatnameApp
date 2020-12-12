@@ -9,7 +9,7 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
-
+pod 'SDWebImage', '~> 5.0'
 
   # Pods for Seyahatname
 

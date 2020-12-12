@@ -50,11 +50,12 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                             self.present(Notify.Alert(title: "Hata", message: error?.localizedDescription ?? "Bilinmeyen Hata"), animated: true, completion: nil)
                         } else {
                             let imageUrl = url?.absoluteString
+                            let postBy = Auth.auth().currentUser!.email!.components(separatedBy: "@")
                             // Database
                             let db = Firestore.firestore()
                             var dbReference: DocumentReference?
                             let post = ["imageUrl": imageUrl!,
-                                        "email": Auth.auth().currentUser!.email!,
+                                        "postBy": postBy[0],
                                         "description": self.txtDescription.text!,
                                         "date": FieldValue.serverTimestamp(),
                                         "likes": 0] as [String: Any]
