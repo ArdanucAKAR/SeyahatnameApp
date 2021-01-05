@@ -26,7 +26,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func GetPosts() {
         let db = Firestore.firestore()
 
-        db.collection("Posts").addSnapshotListener { snapshot, error in
+        db.collection("Posts").order(by: "date", descending: true).addSnapshotListener { snapshot, error in
             if error != nil {
                 print(error?.localizedDescription)
             } else {
@@ -34,7 +34,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.Posts.removeAll()
                     for document in snapshot!.documents {
                         let data = document.data()
-                        let post = Post(postBy: data["postBy"] as! String,
+                        let post = Post(postID: document.documentID,
+                                        postBy: data["postBy"] as! String,
                                         image: data["imageUrl"] as! String,
                                         description: data["description"] as! String,
 //                                        date: data["date"] as! Timestamp,
@@ -57,6 +58,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.lblDescription.text = Posts[indexPath.row].Description
         cell.lblLikeCount.text = String(Posts[indexPath.row].Likes)
         cell.imgPlace.sd_setImage(with: URL(string: Posts[indexPath.row].Image))
+        cell.lblPostID.text = Posts[indexPath.row].PostID 
         return cell
     }
 
