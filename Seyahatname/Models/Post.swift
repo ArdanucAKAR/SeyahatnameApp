@@ -13,15 +13,17 @@ class Post {
     var PostBy: String
     var Image: String
     var Description: String
-//    var Date: Timestamp
     var Likes: Int
+    var Latitude: Double
+    var Longitude: Double
 
-    init(postID: String, postBy: String, image: String, description: String, /* date: Timestamp, */ likes: Int) {
+    init(postID: String, postBy: String, image: String, description: String, likes: Int, latitude: Double, longitude: Double) {
         PostID = postID
         PostBy = postBy
         Image = image
         Description = description
-//        Date = date
         Likes = likes
+        Latitude = latitude
+        Longitude = longitude
     }
 }

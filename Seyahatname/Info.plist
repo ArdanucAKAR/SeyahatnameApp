@@ -45,6 +45,8 @@
 	<string>LaunchScreen</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To Choose a Photo!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Fotoğraf yükledikten sonra konumuzu eklemeniz için gereklidir.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

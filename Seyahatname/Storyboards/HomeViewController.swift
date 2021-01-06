@@ -38,8 +38,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         postBy: data["postBy"] as! String,
                                         image: data["imageUrl"] as! String,
                                         description: data["description"] as! String,
-//                                        date: data["date"] as! Timestamp,
-                                        likes: data["likes"] as! Int)
+                                        likes: data["likes"] as! Int,
+                                        latitude: data["latitude"] as! Double,
+                                        longitude: data["longitude"] as! Double)
                         self.Posts.append(post)
                     }
                     self.tblPosts.reloadData()
@@ -58,7 +59,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.lblDescription.text = Posts[indexPath.row].Description
         cell.lblLikeCount.text = String(Posts[indexPath.row].Likes)
         cell.imgPlace.sd_setImage(with: URL(string: Posts[indexPath.row].Image))
-        cell.lblPostID.text = Posts[indexPath.row].PostID 
+        cell.lblPostID.text = Posts[indexPath.row].PostID
         return cell
     }
 
