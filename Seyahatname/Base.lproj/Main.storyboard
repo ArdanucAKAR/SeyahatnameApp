@@ -111,7 +111,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnn-Ow-46c">
                                                     <rect key="frame" x="20" y="297" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="heart-7"/>
+                                                    <state key="normal" image="icons8-heart"/>
                                                     <connections>
                                                         <action selector="btnLikeClicked:" destination="9Yz-lc-1yI" eventType="touchUpInside" id="ZKX-sA-CwD"/>
                                                     </connections>
@@ -119,7 +119,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qM2-kb-cuR">
                                                     <rect key="frame" x="58" y="297" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="airplane"/>
+                                                    <state key="normal" image="icons8-airplane_take_off"/>
                                                     <connections>
                                                         <action selector="btnAddTravelBookClicked:" destination="9Yz-lc-1yI" eventType="touchUpInside" id="Xkl-9l-1Y1"/>
                                                     </connections>
@@ -138,12 +138,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no1-u2-Dow">
+                                                    <rect key="frame" x="187" y="302" width="63" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28V-CL-lzk">
+                                                    <rect key="frame" x="280" y="302" width="77" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnLike" destination="Nnn-Ow-46c" id="pBY-iN-DjZ"/>
+                                            <outlet property="btnTravel" destination="qM2-kb-cuR" id="axx-Zu-2Za"/>
                                             <outlet property="imgPlace" destination="Uyl-od-tkz" id="yKo-fE-keK"/>
                                             <outlet property="lblDescription" destination="284-Rv-frr" id="k22-Y6-gTs"/>
+                                            <outlet property="lblLatitude" destination="no1-u2-Dow" id="yHe-Xz-2Wa"/>
                                             <outlet property="lblLikeCount" destination="2T2-Gh-Hop" id="MJy-Ry-zog"/>
+                                            <outlet property="lblLongitude" destination="28V-CL-lzk" id="RV7-9L-ApU"/>
                                             <outlet property="lblPostID" destination="pDX-a3-5ZZ" id="oWb-ZI-n5m"/>
                                             <outlet property="lblUsername" destination="A3h-3V-gHM" id="hnY-wL-r8p"/>
                                         </connections>
@@ -208,6 +226,25 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnLogoutClick:" destination="rnE-c5-LyW" eventType="touchUpInside" id="KLX-PA-iLp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5VF-k2-7C4">
+                                <rect key="frame" x="20" y="44" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="90" maxX="95" maxY="0.0"/>
+                                <state key="normal" image="icons8-airplane_take_off 2">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Seyahat Defterin">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor"/>
+                                                <font key="NSFont" metaFont="system" size="11"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="btnTravelBookClick:" destination="rnE-c5-LyW" eventType="touchUpInside" id="azO-Xe-UcT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -520,13 +557,17 @@
         <segue reference="5Jc-kh-4wR"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="airplane" width="30" height="30"/>
         <image name="gear" width="30" height="30"/>
-        <image name="heart-7" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
+        <image name="icons8-airplane_take_off" width="100" height="100"/>
+        <image name="icons8-airplane_take_off 2" width="100" height="100"/>
+        <image name="icons8-heart" width="100" height="100"/>
         <image name="logoSeyahatname" width="1340" height="1414"/>
         <image name="plus-sign" width="29" height="30"/>
         <image name="user" width="980" height="980"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

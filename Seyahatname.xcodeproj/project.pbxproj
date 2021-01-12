@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		148D77B0D5D54B5ECB5C8079 /* Pods_Seyahatname.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6731FC78531AB22E8CE7DC1A /* Pods_Seyahatname.framework */; };
+		1806912125A5DD6700DAD86D /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806912025A5DD6700DAD86D /* Travel.swift */; };
 		18308F2A256F87A6008C6FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F29256F87A6008C6FA7 /* AppDelegate.swift */; };
 		18308F2C256F87A6008C6FA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */; };
 		18308F2E256F87A6008C6FA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F2D256F87A6008C6FA7 /* LoginViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1806912025A5DD6700DAD86D /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		18308F26256F87A6008C6FA7 /* Seyahatname.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seyahatname.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18308F29256F87A6008C6FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				188D63DB25822F3100455B4B /* Post.swift */,
+				1806912025A5DD6700DAD86D /* Travel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				188D63DC25822F3100455B4B /* Post.swift in Sources */,
 				18308F2E256F87A6008C6FA7 /* LoginViewController.swift in Sources */,
 				1867B653257827E900F91381 /* Notify.swift in Sources */,
+				1806912125A5DD6700DAD86D /* Travel.swift in Sources */,
 				18C48A63257A31B500DD9F01 /* CustomTextView.swift in Sources */,
 				18308F2A256F87A6008C6FA7 /* AppDelegate.swift in Sources */,
 				18308F2C256F87A6008C6FA7 /* SceneDelegate.swift in Sources */,

@@ -28,14 +28,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         db.collection("Posts").order(by: "date", descending: true).addSnapshotListener { snapshot, error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "Bilinmeyen Hata")
             } else {
                 if snapshot?.isEmpty != true, snapshot != nil {
                     self.Posts.removeAll()
                     for document in snapshot!.documents {
                         let data = document.data()
-                        let post = Post(postID: document.documentID,
-                                        postBy: data["postBy"] as! String,
+                        let post = Post(id: document.documentID,
+                                        by: data["postBy"] as! String,
                                         image: data["imageUrl"] as! String,
                                         description: data["description"] as! String,
                                         likes: data["likes"] as! Int,
@@ -55,11 +55,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tblPosts.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostsCell
-        cell.lblUsername.text = Posts[indexPath.row].PostBy
+        cell.vc = self
+        cell.lblUsername.text = Posts[indexPath.row].By
         cell.lblDescription.text = Posts[indexPath.row].Description
         cell.lblLikeCount.text = String(Posts[indexPath.row].Likes)
         cell.imgPlace.sd_setImage(with: URL(string: Posts[indexPath.row].Image))
-        cell.lblPostID.text = Posts[indexPath.row].PostID
+        cell.lblPostID.text = Posts[indexPath.row].ID
+        cell.lblLatitude.text = "\(Posts[indexPath.row].Latitude)"
+        cell.lblLongitude.text = "\(Posts[indexPath.row].Longitude)"
         return cell
     }
 

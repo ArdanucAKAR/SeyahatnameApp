@@ -15,13 +15,16 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func btnTravelBookClick(_ sender: Any) {}
+
     @IBAction func btnLogoutClick(_ sender: Any) {
         do {
             try Auth.auth().signOut()
             performSegue(withIdentifier: "toLoginVC", sender: nil)
         } catch {
-            present(Notify.Alert(title: "Hata", message: "Bilinmeyen Hata"), animated: true, completion: nil)
-            
+            present(Notify.Alert(title: "Hata", message: "Bilinmeyen Hata"),
+                    animated: true,
+                    completion: nil)
         }
     }
 }
