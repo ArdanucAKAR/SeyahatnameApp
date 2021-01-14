@@ -11,11 +11,17 @@ import UIKit
 class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    @IBAction func btnTravelBookClick(_ sender: Any) {}
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
     @IBAction func btnLogoutClick(_ sender: Any) {
         do {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		148D77B0D5D54B5ECB5C8079 /* Pods_Seyahatname.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6731FC78531AB22E8CE7DC1A /* Pods_Seyahatname.framework */; };
 		1806912125A5DD6700DAD86D /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806912025A5DD6700DAD86D /* Travel.swift */; };
+		1806912425B043AF00DAD86D /* TravelBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806912325B043AE00DAD86D /* TravelBookViewController.swift */; };
 		18308F2A256F87A6008C6FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F29256F87A6008C6FA7 /* AppDelegate.swift */; };
 		18308F2C256F87A6008C6FA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */; };
 		18308F2E256F87A6008C6FA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308F2D256F87A6008C6FA7 /* LoginViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1806912025A5DD6700DAD86D /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		1806912325B043AE00DAD86D /* TravelBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBookViewController.swift; sourceTree = "<group>"; };
 		18308F26256F87A6008C6FA7 /* Seyahatname.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seyahatname.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18308F29256F87A6008C6FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 				183A4CDA2573D1B40087668F /* UI */,
 				18308F29256F87A6008C6FA7 /* AppDelegate.swift */,
 				18308F2B256F87A6008C6FA7 /* SceneDelegate.swift */,
-				183A4CEA257807AF0087668F /* Storyboards */,
+				183A4CEA257807AF0087668F /* ViewController */,
 				18308F2F256F87A6008C6FA7 /* Main.storyboard */,
 				18308F32256F87A6008C6FA7 /* Assets.xcassets */,
 				18308F34256F87A6008C6FA7 /* LaunchScreen.storyboard */,
@@ -112,7 +114,7 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		183A4CEA257807AF0087668F /* Storyboards */ = {
+		183A4CEA257807AF0087668F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				18308F2D256F87A6008C6FA7 /* LoginViewController.swift */,
@@ -121,8 +123,9 @@
 				183A4CF22578084A0087668F /* SettingsViewController.swift */,
 				1867B64F25781D0D00F91381 /* RegisterViewController.swift */,
 				188D63D72582287B00455B4B /* PostsCell.swift */,
+				1806912325B043AE00DAD86D /* TravelBookViewController.swift */,
 			);
-			path = Storyboards;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		188D63DA25822F1100455B4B /* Models */ = {
@@ -279,6 +282,7 @@
 				18308F2C256F87A6008C6FA7 /* SceneDelegate.swift in Sources */,
 				183A4CE8257805AF0087668F /* CustomButton.swift in Sources */,
 				183A4CED257808180087668F /* HomeViewController.swift in Sources */,
+				1806912425B043AF00DAD86D /* TravelBookViewController.swift in Sources */,
 				183A4CF32578084A0087668F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
