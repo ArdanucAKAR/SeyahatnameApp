@@ -55,6 +55,17 @@ class TravelBookViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let db = Firestore.firestore()
+        
+        if editingStyle == .delete {
+            let travelID = TravelBook[indexPath.row].ID
+            TravelBook.remove(at: indexPath.row)
+            tblTravelBook.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            db.collection("TravelBook").document(travelID).delete()
+        }
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let location = CLLocation(latitude: TravelBook[indexPath.row].Coordinate.latitude,
                                   longitude: TravelBook[indexPath.row].Coordinate.longitude)

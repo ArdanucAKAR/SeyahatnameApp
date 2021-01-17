@@ -58,7 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="nrt-CK-uMF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="plus-sign" id="vMn-aZ-qFn"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-plus" id="vMn-aZ-qFn"/>
                     <connections>
                         <outlet property="btnShare" destination="psQ-HM-GMU" id="9Xj-E1-bbV"/>
                         <outlet property="imgImage" destination="Dk5-hL-4mo" id="vFF-3p-EGB"/>
@@ -172,7 +172,7 @@
                         <viewLayoutGuide key="safeArea" id="DdM-28-izL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="home" id="Ekt-dT-UC3"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-home" id="Ekt-dT-UC3"/>
                     <connections>
                         <outlet property="tblPosts" destination="fne-9z-Cgr" id="nQV-cX-mRk"/>
                     </connections>
@@ -491,12 +491,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NRP-Sb-Icx">
                                 <rect key="frame" x="82" y="472" width="250" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre Tekrarı" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="reA-z1-0Lk">
                                 <rect key="frame" x="82" y="514" width="250" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZt-8C-8ZX">
                                 <rect key="frame" x="0.0" y="826" width="414" height="1"/>
@@ -573,7 +573,7 @@
         <scene sceneID="1q6-q8-80B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6ek-cw-ggr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="gear" id="ykb-sp-9cM"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-menu" id="ykb-sp-9cM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tVg-Px-si5">
                         <autoresizingMask key="autoresizingMask"/>
@@ -603,15 +603,16 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="lk4-QK-EKC"/>
-        <segue reference="5Jc-kh-4wR"/>
+        <segue reference="S3b-QS-5xm"/>
+        <segue reference="HMt-FI-Ha7"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="gear" width="30" height="30"/>
-        <image name="home" width="30" height="30"/>
         <image name="icons8-airplane_take_off" width="100" height="100"/>
         <image name="icons8-airplane_take_off 2" width="100" height="100"/>
         <image name="icons8-heart" width="100" height="100"/>
+        <image name="icons8-home" width="32" height="32"/>
+        <image name="icons8-menu" width="32" height="32"/>
+        <image name="icons8-plus" width="32" height="32"/>
         <image name="logoSeyahatname" width="1340" height="1414"/>
         <image name="plus-sign" width="29" height="30"/>
         <image name="user" width="980" height="980"/>
