@@ -100,7 +100,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                             "postBy": postBy[0],
                                             "description": self.txtDescription.text!,
                                             "date": FieldValue.serverTimestamp(),
-                                            "likes": 0,
+                                            "likes": [],
                                             "latitude": self.choosenCoordinate?.latitude,
                                             "longitude": self.choosenCoordinate?.longitude] as [String: Any]
 

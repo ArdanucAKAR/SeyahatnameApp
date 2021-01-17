@@ -53,8 +53,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return Posts.count
     }
 
+    func find(value searchValue: String, in array: [String]) -> String? {
+        for (index, userID) in array.enumerated() {
+            if userID == searchValue {
+                return userID
+            }
+        }
+        return nil
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let userID = (Auth.auth().currentUser?.uid)!
         let cell = tblPosts.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostsCell
+
         cell.vc = self
         cell.lblUsername.text = Posts[indexPath.row].By
         cell.lblDescription.text = Posts[indexPath.row].Description
@@ -63,6 +74,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.lblPostID.text = Posts[indexPath.row].ID
         cell.lblLatitude.text = "\(Posts[indexPath.row].Latitude)"
         cell.lblLongitude.text = "\(Posts[indexPath.row].Longitude)"
+        let didLike = find(value: userID, in: Posts[indexPath.row].Likes)
+        if didLike != nil {
+            cell.btnLike.setImage(UIImage(named: "icons8-heart-fill"), for: .normal)
+        }
+
         return cell
     }
 

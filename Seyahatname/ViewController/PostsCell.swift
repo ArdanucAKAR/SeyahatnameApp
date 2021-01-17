@@ -33,30 +33,36 @@ class PostsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    @IBAction func btnLikeClicked(_ sender: Any) {
-        let db = Firestore.firestore()
-        var like: [String: Any] = [:]
-        let post = db.collection("Posts").document(lblPostID.text!)
-        post.getDocument { document, _ in
-            if let document = document, document.exists {
-                let postData = document.data()
-                if let likes = postData?["likes"] as? Int {
-                    if self.btnLike.currentImage == self.imgDefaultLike {
-                        like = ["likes": likes + 1] as [String: Any]
-                        self.btnLike.setImage(UIImage(named: "icons8-heart-fill"), for: .normal)
-                    } else {
-                        like = ["likes": likes - 1] as [String: Any]
-                        self.btnLike.setImage(UIImage(named: "icons8-heart"), for: .normal)
-                    }
-                    post.setData(like, merge: true)
-
-                } else {
-                    print("Int dönüşüm problemi")
-                }
-            } else {
-                print("Post bulunmadı")
+    func find(value searchValue: String, in array: [QueryDocumentSnapshot]) -> QueryDocumentSnapshot? {
+        for (index, document) in array.enumerated() {
+            if document.documentID == searchValue {
+                return document
             }
         }
+        return nil
+    }
+
+    @IBAction func btnLikeClicked(_ sender: Any) {
+        let db = Firestore.firestore()
+        let userID = Auth.auth().currentUser?.uid
+        
+        db.collection("Posts").whereField("likes", arrayContains: userID).getDocuments(completion: { snapshot, error in
+            if error != nil {
+                print(error?.localizedDescription ?? "Bilinmeyen Hata")
+            } else {
+                if snapshot?.isEmpty != true, snapshot != nil {
+                    let post: QueryDocumentSnapshot = self.find(value: self.lblPostID.text!, in: snapshot!.documents)!
+                    if post != nil {
+                        self.btnLike.setImage(UIImage(named: "icons8-heart"), for: .normal)
+                        post.reference.updateData(["likes": FieldValue.arrayRemove([userID])])
+                    }
+                } else {
+                    let post = db.collection("Posts").document(self.lblPostID.text!)
+                    self.btnLike.setImage(UIImage(named: "icons8-heart-fill"), for: .normal)
+                    post.updateData(["likes": FieldValue.arrayUnion([userID])])
+                }
+            }
+        })
     }
 
     @IBAction func btnAddTravelBookClicked(_ sender: Any) {
