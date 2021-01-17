@@ -51,10 +51,10 @@ class PostsCell: UITableViewCell {
                     post.setData(like, merge: true)
 
                 } else {
-                    print("Int Dönüşüm Problemi")
+                    print("Int dönüşüm problemi")
                 }
             } else {
-                print("Post Bulunmadı")
+                print("Post bulunmadı")
             }
         }
     }
@@ -87,7 +87,7 @@ class PostsCell: UITableViewCell {
                                      animated: true,
                                      completion: nil)
                 } else {
-                    self.vc?.present(Notify.Alert(title: "Başarılı", message: "Seyahat Defterinize Eklendi."),
+                    self.vc?.present(Notify.Alert(title: "Başarılı", message: "Seyahat defterinize eklendi."),
                                      animated: true,
                                      completion: nil)
                 }

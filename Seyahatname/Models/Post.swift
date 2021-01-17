@@ -12,11 +12,11 @@ class Post {
     var By: String
     var Image: String
     var Description: String
-    var Likes: Int
+    var Likes: [String]
     var Latitude: Double
     var Longitude: Double
 
-    init(id: String, by: String, image: String, description: String, likes: Int, latitude: Double, longitude: Double) {
+    init(id: String, by: String, image: String, description: String, likes: [String], latitude: Double, longitude: Double) {
         ID = id
         By = by
         Image = image

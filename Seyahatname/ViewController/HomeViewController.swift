@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         by: data["postBy"] as! String,
                                         image: data["imageUrl"] as! String,
                                         description: data["description"] as! String,
-                                        likes: data["likes"] as! Int,
+                                        likes: data["likes"] as! [String],
                                         latitude: data["latitude"] as! Double,
                                         longitude: data["longitude"] as! Double)
                         self.Posts.append(post)
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.vc = self
         cell.lblUsername.text = Posts[indexPath.row].By
         cell.lblDescription.text = Posts[indexPath.row].Description
-        cell.lblLikeCount.text = String(Posts[indexPath.row].Likes)
+        cell.lblLikeCount.text = String(Posts[indexPath.row].Likes.count)
         cell.imgPlace.sd_setImage(with: URL(string: Posts[indexPath.row].Image))
         cell.lblPostID.text = Posts[indexPath.row].ID
         cell.lblLatitude.text = "\(Posts[indexPath.row].Latitude)"
