@@ -57,12 +57,27 @@ class TravelBookViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let db = Firestore.firestore()
-        
+        let userID = Auth.auth().currentUser?.uid
+
         if editingStyle == .delete {
             let travelID = TravelBook[indexPath.row].ID
+            let refTravel = db.collection("TravelBook").document(travelID)
             TravelBook.remove(at: indexPath.row)
             tblTravelBook.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
-            db.collection("TravelBook").document(travelID).delete()
+            refTravel.getDocument { snapshot, error in
+                if error != nil {
+                    print(error?.localizedDescription ?? "Bilinmeyen Hata")
+                } else {
+                    if snapshot != nil {
+                        let data = snapshot?.data()
+                        let postID = data!["postID"] as! String
+                        db.collection("Posts")
+                            .document(postID)
+                            .updateData(["thoseWhoWantToGo": FieldValue.arrayRemove([userID])])
+                        refTravel.delete()
+                    }
+                }
+            }
         }
     }
 

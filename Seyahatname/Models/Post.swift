@@ -15,8 +15,9 @@ class Post {
     var Likes: [String]
     var Latitude: Double
     var Longitude: Double
+    var ThoseWhoWantToGo: [String]
 
-    init(id: String, by: String, image: String, description: String, likes: [String], latitude: Double, longitude: Double) {
+    init(id: String, by: String, image: String, description: String, likes: [String], latitude: Double, longitude: Double, thoseWhoWantToGo: [String]) {
         ID = id
         By = by
         Image = image
@@ -24,5 +25,6 @@ class Post {
         Likes = likes
         Latitude = latitude
         Longitude = longitude
+        ThoseWhoWantToGo = thoseWhoWantToGo
     }
 }

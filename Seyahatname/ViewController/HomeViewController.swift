@@ -40,7 +40,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         description: data["description"] as! String,
                                         likes: data["likes"] as! [String],
                                         latitude: data["latitude"] as! Double,
-                                        longitude: data["longitude"] as! Double)
+                                        longitude: data["longitude"] as! Double,
+                                        thoseWhoWantToGo: data["thoseWhoWantToGo"] as! [String])
                         self.Posts.append(post)
                     }
                     self.tblPosts.reloadData()
@@ -77,6 +78,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let didLike = find(value: userID, in: Posts[indexPath.row].Likes)
         if didLike != nil {
             cell.btnLike.setImage(UIImage(named: "icons8-heart-fill"), for: .normal)
+        }
+
+        let didWantToGo = find(value: userID, in: Posts[indexPath.row].ThoseWhoWantToGo)
+        if didWantToGo != nil {
+            cell.btnTravel.setImage(UIImage(named: "icons8-airplane_take_off 2"), for: .normal)
         }
 
         return cell

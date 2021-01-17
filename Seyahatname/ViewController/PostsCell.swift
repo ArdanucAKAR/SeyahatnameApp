@@ -45,7 +45,7 @@ class PostsCell: UITableViewCell {
     @IBAction func btnLikeClicked(_ sender: Any) {
         let db = Firestore.firestore()
         let userID = Auth.auth().currentUser?.uid
-        
+
         db.collection("Posts").whereField("likes", arrayContains: userID).getDocuments(completion: { snapshot, error in
             if error != nil {
                 print(error?.localizedDescription ?? "Bilinmeyen Hata")
@@ -67,11 +67,14 @@ class PostsCell: UITableViewCell {
 
     @IBAction func btnAddTravelBookClicked(_ sender: Any) {
         let db = Firestore.firestore()
+        let userID = Auth.auth().currentUser?.uid
         var coordinate: CLLocationCoordinate2D?
         coordinate?.latitude = Double(lblLatitude.text!)!
         coordinate?.longitude = Double(lblLongitude.text!)!
 
-        let alert = UIAlertController(title: "Seyahat Adı", message: "Bu seyahati defterinize kaydetmek üzeresiniz lütfen seyahat adı giriniz.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Seyahat Adı",
+                                      message: "Bu seyahati defterinize kaydetmek üzeresiniz lütfen seyahat adı giriniz.",
+                                      preferredStyle: .alert)
 
         alert.addTextField { textField in
             textField.placeholder = "Seyahat Adı"
@@ -85,7 +88,8 @@ class PostsCell: UITableViewCell {
             let travel = ["name": alert?.textFields![0].text,
                           "latitude": self.lblLatitude.text!,
                           "longitude": self.lblLongitude.text!,
-                          "by": Auth.auth().currentUser?.uid] as [String: Any]
+                          "by": userID,
+                          "postID": self.lblPostID.text!] as [String: Any]
 
             db.collection("TravelBook").addDocument(data: travel, completion: { error in
                 if error != nil {
@@ -98,6 +102,12 @@ class PostsCell: UITableViewCell {
                                      completion: nil)
                 }
             })
+
+            db.collection("Posts")
+                .document(self.lblPostID.text!)
+                .updateData(["thoseWhoWantToGo": FieldValue.arrayUnion([userID])])
+
+            self.btnTravel.setImage(UIImage(named: "icons8-airplane_take_off 2"), for: .normal)
         }))
 
         vc?.present(alert, animated: true, completion: nil)

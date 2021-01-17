@@ -55,20 +55,25 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude,
+                                              longitude: locations[0].coordinate.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: location, span: span)
+
         map.setRegion(region, animated: true)
     }
 
     @objc func chooseImage() {
         let pickerController = UIImagePickerController()
+
         pickerController.delegate = self
         pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any])
+    {
         imgImage.image = info[.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
     }
@@ -81,32 +86,40 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         if imgImage.image != imgDefault, choosenCoordinate != nil {
             if let data = imgImage.image?.jpegData(compressionQuality: 0.5) {
                 let uuid = UUID().uuidString
-
                 let imageReference = mediaFolder.child("\(uuid).jpg")
+
                 imageReference.putData(data, metadata: nil) { _, error in
                     if error != nil {
-                        self.present(Notify.Alert(title: "Hata", message: error?.localizedDescription ?? "Bilinmeyen Hata"), animated: true, completion: nil)
+                        self.present(Notify.Alert(title: "Hata",
+                                                  message: error?.localizedDescription ?? "Bilinmeyen Hata"),
+                                     animated: true,
+                                     completion: nil)
                     } else {
                         imageReference.downloadURL { url, error in
                             if error != nil {
-                                self.present(Notify.Alert(title: "Hata", message: error?.localizedDescription ?? "Bilinmeyen Hata"), animated: true, completion: nil)
+                                self.present(Notify.Alert(title: "Hata",
+                                                          message: error?.localizedDescription ?? "Bilinmeyen Hata"),
+                                             animated: true,
+                                             completion: nil)
                             } else {
                                 let imageUrl = url?.absoluteString
                                 let postBy = Auth.auth().currentUser!.email!.components(separatedBy: "@")
-                                // Database
                                 let db = Firestore.firestore()
-                                // var dbReference: DocumentReference?
                                 let post = ["imageUrl": imageUrl!,
                                             "postBy": postBy[0],
                                             "description": self.txtDescription.text!,
                                             "date": FieldValue.serverTimestamp(),
                                             "likes": [],
                                             "latitude": self.choosenCoordinate?.latitude,
-                                            "longitude": self.choosenCoordinate?.longitude] as [String: Any]
+                                            "longitude": self.choosenCoordinate?.longitude,
+                                            "thoseWhoWantToGo": []] as [String: Any]
 
-                                /* dbReference = */ db.collection("Posts").addDocument(data: post, completion: { error in
+                                db.collection("Posts").addDocument(data: post, completion: { error in
                                     if error != nil {
-                                        self.present(Notify.Alert(title: "Hata", message: error?.localizedDescription ?? "Bilinmeyen Hata"), animated: true, completion: nil)
+                                        self.present(Notify.Alert(title: "Hata",
+                                                                  message: error?.localizedDescription ?? "Bilinmeyen Hata"),
+                                                     animated: true,
+                                                     completion: nil)
                                     } else {
                                         self.imgImage.image = UIImage(named: "plus-sign")
                                         self.txtDescription.text = ""
@@ -120,7 +133,10 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 }
             }
         } else {
-            present(Notify.Alert(title: "Hata", message: "Lütfen fotoğraf yükleyin ve konum seçin."), animated: true, completion: nil)
+            present(Notify.Alert(title: "Hata",
+                                 message: "Lütfen fotoğraf yükleyin ve konum seçin."),
+                    animated: true,
+                    completion: nil)
         }
     }
 }
